@@ -13,6 +13,8 @@ input.addEventListener("keyup", (key) => {
   if (key.keyCode == 13) {
     if (!input.value.trim().length) return;
     let isInputURL = isUrl(input.value);
+    document.getElementById("initiate").innerHTML =
+      "<span class='button__text disabled'>Loading...</span>";
     let url = btoa(input.value);
     if (isInputURL) {
       window.location.assign(`/prox/?url=${url}`);
@@ -27,6 +29,8 @@ document.querySelector("#initiate").addEventListener("click", () => {
   if (!input.value.trim().length) return;
   let isInputURL = isUrl(input.value);
   let url = btoa(input.value);
+  document.getElementById("initiate").innerHTML =
+    "<span class='button__text disabled'>Loading...</span>";
   if (isInputURL) {
     window.location.assign(`/prox/?url=${url}`);
   } else {

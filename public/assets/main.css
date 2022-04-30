@@ -100,6 +100,15 @@ text {
   font-family: "Poppins", sans-serif;
 }
 
+.yt {
+  margin: 0;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .button {
   touch-callout: none;
   user-select: none;

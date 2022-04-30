@@ -12,7 +12,11 @@ const http = require("http"),
     if (req.url == "/sw.js") {
       res.setHeader("Content-Type", "text/javascript");
       res.write(fs.readFileSync(__dirname + "/public/assets/sw.js", "utf-8"));
-      // res.sendFile(path.resolve(__dirname, "public/assets", "sw.js"));
+    }
+
+    if (req.url == "/yt") {
+      res.setHeader("Content-Type", "text/html");
+      res.write(fs.readFileSync(__dirname + "/public/youtube.html", "utf-8"));
     }
     // HTTP(S) proxy.
     if (req.url.startsWith(config.prefix)) return proxy.http(req, res);
